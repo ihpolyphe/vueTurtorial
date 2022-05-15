@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "ポケモン図鑑更新",
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "text": "Vue.js",
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "text": "README.md修正",
+      "categoryId": 2
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "やること"
+    },
+    {
+      "id": 2,
+      "title": "やったこと"
+    }
+  ]
+}
