@@ -1,30 +1,42 @@
 <template>
   <div class="list-style">
     {{ category.title }}
-    <card v-for="card in cardList" :key="card.id" :card="card"></card>
+    <card
+      v-for="card in cardList"
+      :key="card.id"
+      :card="card"
+      :isNew="false"
+    ></card>
+    <card :card="newCard" :isNew="true"></card>
   </div>
 </template>
 
 <script>
 import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
-import List from "./Card.vue";
+import Card from "./Card.vue"; // eslint-disable-line
 
 export default {
-  components: { Card },
+  components: { Card }, // eslint-disable-line
   props: {
     category: Object,
   },
   setup(props) {
     const store = useStore();
-    onMounted(store.dispatch("fetchCategoryList"));
+    onMounted(store.dispatch("fetchCardList"));
     const cardList = computed(() =>
       store.state.cardList.filter(
         (card) => card.categoryId === props.category.id
       )
     );
+    const newCard = {
+      id: -1,
+      text: "",
+      categoryId: props.category.id,
+    };
     return {
       cardList,
+      newCard,
     };
   },
 };

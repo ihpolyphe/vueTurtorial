@@ -3,7 +3,7 @@
     <list
       v-for="category in categoryList"
       :key="category.id"
-      ;category="category"
+      :category="category"
     ></list>
   </div>
 </template>
