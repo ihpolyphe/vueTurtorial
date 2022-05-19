@@ -36,4 +36,14 @@
 
 1:1 error Parsing error: Unexpected token < -https://qiita.com/kurkuru/items/d4eebd34f0898c6a2d5a
 
-エラー解除
+- eslintrc.js を設定
+  https://reffect.co.jp/vue/eslint#ESLint
+- // eslint-disable-line で eslint を pass
+  https://qiita.com/blajir/items/82127aaa57e4d73a8389
+
+# Todo
+
+追加ボタンが効かない。。。
+->解決！
+`store.vue`の以下の行が`http`なのに`https`になっていた！
+await insertItems("https://localhost:3000/todos", data);

@@ -26,7 +26,7 @@ export default createStore({
       context.commit("setCardList", cardList);
     },
     async addCard(context, data) {
-      await insertItems("https://localhost:3000/todos", data);
+      await insertItems("http://localhost:3000/todos", data);
     },
   },
 });
